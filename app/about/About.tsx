@@ -32,7 +32,7 @@ const About = () => {
     
         </p>
         <br />
-        <span className="text-[22px]">Shahriarsajeeb&apos;s</span>
+        <span className="text-[22px]">ครูเน็ท&apos;s</span>
         <h5 className="text-[18px] font-Poppins">
           Founder and CEO of 
         </h5>
