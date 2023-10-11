@@ -14,7 +14,7 @@ const CoursePlayer: FC<Props> = ({ videoUrl }) => {
 
   useEffect(() => {
     axios
-      .post("https://krunitnew-77499a6041f4.herokuapp.com/api/v1/getVdoCipherOTP", {
+      .post("https://forex-bykrunet.vercel.app/api/v1/getVdoCipherOTP", {
         videoId: videoUrl,
       })
       .then((res) => {
