@@ -45,8 +45,15 @@ const About = () => {
         </p>
         <br />
         <span className="text-[22px]">โค้ชเนส&apos;s</span>
+        <br />
+        <br />
         <h5 className="text-[18px] font-Poppins">
-          Founder and CEO of
+        Line Id : netflowers123 
+        <br />
+        <br />
+        เบอร์โทรติดต่อ : 0836294994
+
+
         </h5>
         <br />
         <br />
