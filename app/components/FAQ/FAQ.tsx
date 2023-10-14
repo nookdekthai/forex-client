@@ -25,6 +25,23 @@ const FAQ = (props: Props) => {
     <div>
          <div className="w-[90%] 800px:w-[80%] m-auto">
         <h1 className={`${styles.title} 800px:text-[40px]`}>
+          ติดต่อ
+          <br />
+          <br />
+
+          Line Id : netflowers123
+          <br />
+          <br />
+
+          เบอร์โทรติดต่อ : 0836294994
+
+
+          <br />
+          <br />
+          Email : netandmanu123@gmail.com
+          <br />
+          <br />
+           <br />
           Frequently Asked Questions
         </h1>
         <div className="mt-12">
