@@ -107,7 +107,7 @@ const PeopleReview = () => {
 
 function PeopleReviewCard({ name, profession, comment }: any) {
     return (
-        <div className="relative md:max-w-[376px] md:min-h-[330px] bg-[#fff] rounded-xl p-8 drop-shadow-md ">
+        <div className="relative min-h-[380px] md:max-w-[376px] md:min-h-[330px] bg-[#fff] rounded-xl p-8 drop-shadow-md ">
             {/* <div className="text-[20px] font-bold text-[#6440FB] mb-8 ">Perfect Job</div> */}
             <div className="text-black font-Poppins">
                 {comment}
