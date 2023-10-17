@@ -26,7 +26,7 @@ const WhyLearnCourse = () => {
             <div className="w-full bg-[#1A064F] p-10 pb-20 ">
                 <div className="w-full" data-aos="fade-down" data-aos-delay="500">
                     <p className="text-white text-center font-bold text-[30px] mt-10">Why learn with our courses?</p>
-                    <p className="text-white text-center text-sm mb-16">Lorem ipsum dolor sit amet, consectetur.</p>
+                    <p className="text-white text-center text-sm mb-16">คอร์สเรียนของเราดียังไง</p>
                 </div>
                 <div className='flex flex-col md:flex-row gap-8 justify-center items-center text-black' data-aos="fade-down" data-aos-delay="1000" >
                     {
