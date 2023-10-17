@@ -1,7 +1,7 @@
 
 import Home from "./components/HomeNew/Home";
 
-export const revalidate = 3600
+export const revalidate = 180
 
 // http://localhost:8000/api/v1/get-layout/Banner
 const Page = async () => {

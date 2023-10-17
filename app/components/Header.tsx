@@ -94,7 +94,7 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
                   <div>
                     <Link
                       href={"/"}
-                      className={`text-[25px] flex items-center font-Poppins font-[500] text-black dark:text-white`}
+                      className={`text-[18px] md:text-[25px] flex items-center font-Poppins font-[500] text-black dark:text-white`}
                     >
                       <Image
                         src={'/bird.png'}
