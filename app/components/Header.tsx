@@ -78,11 +78,11 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
 
   return (
     <>
-      {
+      {/* {
         isLoading ? (
           <Loader />
-        ) : (
-          <div className="w-full relative">
+        ) : ( */}
+          <div className="w-full relative dark:bg-[#140342]">
             <div
               className={`${active
                 ? "dark:bg-opacity-50 bg-white dark:bg-gradient-to-b dark:from-gray-900 dark:to-black fixed top-0 left-0 w-full h-[80px] z-[80] border-b dark:border-[#ffffff1c] shadow-xl transition duration-500"
@@ -94,8 +94,14 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
                   <div>
                     <Link
                       href={"/"}
-                      className={`text-[25px] font-Poppins font-[500] text-black dark:text-white`}
+                      className={`text-[25px] flex items-center font-Poppins font-[500] text-black dark:text-white`}
                     >
+                      <Image
+                        src={'/bird.png'}
+                        width={100}
+                        height={100}
+                        alt=""
+                      />
                       Forex Course
                     </Link>
                   </div>
@@ -212,8 +218,8 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
               </>
             )}
           </div>
-        )
-      }
+        {/* )
+      } */}
     </>
   );
 };

@@ -5,7 +5,7 @@ import { Josefin_Sans } from "next/font/google";
 import { ThemeProvider } from "./utils/theme-provider";
 import { Toaster } from "react-hot-toast";
 import { Providers } from "./Provider";
-import { SessionProvider } from "next-auth/react";
+import { SessionProvider, useSession } from "next-auth/react";
 import React, { FC, useEffect } from "react";
 import { useLoadUserQuery } from "@/redux/features/api/apiSlice";
 import Loader from "./components/Loader/Loader";
@@ -52,10 +52,13 @@ export default function RootLayout({
 
 const Custom: FC<{ children: React.ReactNode }> = ({ children }) => {
   const { isLoading } = useLoadUserQuery({});
+  const { data: session } = useSession()
+  console.log("🚀 ~ file: layout.tsx:56 ~ session:", session)
 
   useEffect(() => {
     socketId.on("connection", () => {});
   }, []);
 
-  return <div>{isLoading ? <Loader /> : <div>{children} </div>}</div>;
+  return <div>{(isLoading && session) ? <Loader /> : <div>{children} </div>}</div>;
+  // return <div>{children} </div>
 };
