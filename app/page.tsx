@@ -1,40 +1,27 @@
-"use client";
-import React, { FC, useEffect, useState } from "react";
-import Heading from "./utils/Heading";
-import Header from "./components/Header";
-import Hero from "./components/Route/Hero";
-import Courses from "./components/Route/Courses";
-import Reviews from "./components/Route/Reviews";
-import FAQ from "./components/FAQ/FAQ";
-import Footer from "./components/Footer";
 
-interface Props {}
+import Home from "./components/HomeNew/Home";
 
-const Page: FC<Props> = (props) => {
-  const [open, setOpen] = useState(false);
-  const [activeItem, setActiveItem] = useState(0);
-  const [route, setRoute] = useState("Login");
+export const revalidate = 180
+
+// http://localhost:8000/api/v1/get-layout/Banner
+const Page = async () => {
+  console.log('porcess env =>',process.env.NEXT_PUBLIC_SERVER_URI);
+  
+  const pmBanner = fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}/get-layout/Banner`, {})
+  const pmCategory = fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}/get-layout/Categories`, {})
+  const [resBanner, resCategory] = await Promise.all([pmBanner, pmCategory])
+  const banner = await resBanner.json()
+  const category = await resCategory.json()
+
+
+  const webInfo = {
+    banner: banner?.layout?.banner || {},
+    category: category?.layout?.categories || []
+  }
+  console.log("🚀 ~ file: page.tsx:17 ~ Page ~ webInfo:", webInfo)
 
   return (
-    <div>
-      <Heading
-        title="Forex course"
-        description="ELearning is a platform for students to learn and get help from teachers"
-        keywords="Prograaming,MERN,Redux,Machine Learning"
-      />
-      <Header
-        open={open}
-        setOpen={setOpen}
-        activeItem={activeItem}
-        setRoute={setRoute}
-        route={route}
-      />
-      <Hero />
-      <Courses />
-      <Reviews />
-      <FAQ />
-      <Footer />
-    </div>
+    <Home webInfo={webInfo} />
   );
 };
 
