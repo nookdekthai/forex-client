@@ -1,0 +1,56 @@
+'use client';
+import Image from 'next/image'
+import React from 'react'
+import { useRouter } from 'next/navigation';
+
+import WaveParalax from './WaveParalax';
+
+function Hero({ setOpen, banner }: any) {
+    const router = useRouter()
+
+    return (
+        <div className='relative'>
+            <div className="w-full 1000px:flex items-center dark:bg-[#140342] 1000px:pt-10 ">
+                {/* <div className="absolute top-[100px] 1000px:top-[unset] 1500px:h-[700px] 1500px:w-[700px] 1100px:h-[600px] 1100px:w-[600px] h-[40vh] left-5 w-[40vh] hero_animation rounded-[50%] 1100px:right-8 1500px:left-14"></div> */}
+                <div className="pt-50 1000px:w-[60%]  justify-center md:justify-start flex flex-col items-center 1000px:mt-[0px] text-center 1000px:text-left min-h-[70vh]">
+                    <h2 data-aos="fade-up" data-aos-delay="50" className="font-Poppins dark:text-white text-[#000000c7] text-[30px] px-3 w-full 1000px:text-[50px] font-[600] py-2 1000px:leading-[75px] 1500px:w-[60%] 1100px:w-[78%]">
+                    การลงทุนที่ดีที่สุดคือ <p className='text-[#00FF84] underline'>การลงทุนในตัวเอง</p>
+                    </h2>
+                    <br />
+                    <p data-aos="fade-up" data-aos-delay="100" className="dark:text-[#edfff4] text-[#000000ac] font-Poppins font-[600] text-[18px] 1500px:!w-[55%] 1100px:!w-[78%]">
+                        {banner?.subTitle}
+                    </p>
+                    <br />
+                    <br />
+                    <div className="flex gap-2 1500px:!w-[55%] 1100px:!w-[78%] flex-wrap">
+                        <div onClick={() => setOpen(true)} data-aos="fade-up" data-aos-delay="500" className="h-[60px] w-[200px] font-size-[16px] text-[16px] font-medium leading-[56px] fill-[#FFFFFF] text-[#FFFFFF] bg-[#6440FB] hover:bg-[#5632ED] hover:border-[#5632ED] cursor-pointer border-solid border-[2px_2px_2px_2px] border-[#6440FB] rounded-lg px-[50px] py-0">
+                            Join Us
+                        </div>
+                        <div onClick={() => {router.push('/courses')}} data-aos="fade-up" data-aos-delay="600" className="ml-4 h-[60px] w-[200px] text-[16px] font-medium leading-[56px] fill-[#00FF84] text-[#00FF84]  border-solid border-2 border-[#00FF84] hover:text-[#140342] cursor-pointer hover:bg-[#00FF84] hover:border-[#00FF84]  rounded-lg text-center">
+                            Find Courses
+                        </div>
+                    </div>
+                    <br />
+                </div>
+
+
+                <div data-aos="fade-left" data-aos-delay="500" className="hidden 1000px:w-[40%] md:flex 1000px:min-h-[60vh] items-center justify-end pt-[70px] 1000px:pt-[0] z-10 relative">
+                    <div className='absolute top-[100px] 1000px:top-[unset] 1100px:h-[600px] 1100px:w-[600px] h-[40vh] left-5 w-[40vh] hero_animation rounded-[50%] 1100px:left-8 1500px:left-14 z-9'>
+                    </div>
+                    <Image
+                        src={banner?.image?.url || '/kchgd5cp3jqkvg7zzdin.webp'}
+                        width={400}
+                        height={400}
+                        alt=""
+                        className="object-contain 1100px:max-w-[90%] w-[90%] 1500px:max-w-[85%] h-[auto] z-[10]"
+                    />
+                </div>
+
+            </div>
+            <WaveParalax />
+        </div>
+
+    )
+}
+
+export default Hero

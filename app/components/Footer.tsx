@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -100,17 +101,24 @@ const Footer = (props: Props) => {
           <div>
             <h3 className="text-[20px] font-[600] text-black dark:text-white pb-3">Contact Info</h3>
             <p className="text-base text-black dark:text-gray-300 dark:hover:text-white pb-2">
-            Call Us: 1-885-665-2022
+            Tel. : 083-629-4994
             </p>
            
             <p className="text-base text-black dark:text-gray-300 dark:hover:text-white pb-2">
-            Address: +7011 Vermont Ave, Los Angeles, CA 90044
+            Email : netandmanu123@gmail.com
             </p>
          
             <p className="text-base text-black dark:text-gray-300 dark:hover:text-white  pb-2">
-            Mail Us: hello@elearning.com
+            Line Id : netflowers123
             </p>
-            
+            <div className='bg-white max-w-[160px] p-2'>
+              <Image
+                src={'/lineQr.png'}
+                height={200}
+                width={200}
+                alt=''
+              />
+            </div>
           </div>
         </div>
         <br />
