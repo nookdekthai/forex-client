@@ -6,17 +6,17 @@ const item = [
     {
         title: ' 01. Learn',
         icon: '/online-learning.png',
-        message: 'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.',
+        message: 'สอนโดยผู้เชี่ยวชาย์ที่มีประสบการณ์ไม่ตลาดมากว่า 7 ปี',
     },
     {
         title: '02. Graduate',
         icon: '/online-course.png',
-        message: 'orem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.',
+        message: 'ปูพื้นฐานด้านทฤษฎี เเละมีตัวอย่างชัดเจน',
     },
     {
         title: '03. Work',
         icon: '/computer.png',
-        message: 'orem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.',
+        message: 'เรียนเเล้วสามารถนำไปใช้เทรดจริงได้',
     },
 ]
 
