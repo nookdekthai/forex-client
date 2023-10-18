@@ -36,7 +36,7 @@ function Home({ webInfo }: any) {
     return (
         <div>
             <Heading
-                title="Policy - Elearning"
+                title="Forex-Coachnet"
                 description="Elearning is a learning management system for helping programmers."
                 keywords="programming,mern"
             />
