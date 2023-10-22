@@ -16,11 +16,11 @@ const nextConfig = {
     return [
       {
         source: '/social-auth',
-        destination: `${process.env.NEXT_PUBLIC_SOCKET_SERVER_URI}/api/v1/social-auth`,
+        destination: `${process.env.SERVER_URI}/api/v1/social-auth`,
       },
       {
         source: '/me',
-        destination: `${process.env.NEXT_PUBLIC_SOCKET_SERVER_URI}/api/v1/me`,
+        destination: `${process.env.SERVER_URI}/api/v1/me`,
       },
     ]
   },
