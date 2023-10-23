@@ -5,7 +5,7 @@ export const apiSlice = createApi({
   reducerPath: "api",
   
   baseQuery: fetchBaseQuery({
-    baseUrl: process.env.NEXT_PUBLIC_SERVER_URI,
+    baseUrl: `${window.location.origin}/api/v1`,
     credentials: 'include'
   }),
   endpoints: (builder) => ({
@@ -18,7 +18,7 @@ export const apiSlice = createApi({
     }),
     loadUser: builder.query({
       query: (data) => ({
-        url: `${window.location.origin}/me`,
+        url: `me`,
         method: "GET",
         credentials: "include" as const,
       }),
