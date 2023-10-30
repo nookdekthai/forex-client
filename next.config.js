@@ -15,12 +15,8 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/social-auth',
-        destination: `${process.env.SERVER_URI}/api/v1/social-auth`,
-      },
-      {
-        source: '/me',
-        destination: `${process.env.SERVER_URI}/api/v1/me`,
+        source: '/api/v1/:path*',
+        destination: `${process.env.SERVER_URI}/api/v1/:path*`,
       },
       {
         source: '/update-user-info',
