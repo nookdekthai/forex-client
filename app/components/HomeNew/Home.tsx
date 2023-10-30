@@ -36,9 +36,9 @@ function Home({ webInfo }: any) {
     return (
         <div>
             <Heading
-                title="Forex-Coachnet"
-                description="Elearning is a learning management system for helping programmers."
-                keywords="programming,mern"
+                title="คอร์สสอนการเทรด Forex โดยโค้ชเนส"
+                description="สอนเทคนิคการเทรด Forex ด้วยข่าว เเละ เทรดด้วยเทคนิค"
+                keywords="เทรด Forex , เทรดข่าว"
             />
             <Header
                 open={open}
