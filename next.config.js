@@ -22,6 +22,10 @@ const nextConfig = {
         source: '/me',
         destination: `${process.env.SERVER_URI}/api/v1/me`,
       },
+      {
+        source: '/update-user-info',
+        destination: `${process.env.SERVER_URI}/api/v1/update-user-info`,
+      },
     ]
   },
 }

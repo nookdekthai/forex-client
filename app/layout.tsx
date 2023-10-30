@@ -13,6 +13,35 @@ import socketIO from "socket.io-client";
 const ENDPOINT = process.env.NEXT_PUBLIC_SOCKET_SERVER_URI || "";
 const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
 
+
+
+export const metadata = {
+  title: 'สอนเทรด Forex โดยอาจารย์เนส',
+  description: 'สอนเทรดข่าวฟอเร็ก คอร์สเทรด Forex ',
+  openGraph: {
+    title: 'สอนเทรด Forex โดยอาจารย์เนส',
+    description: 'สอนเทรดข่าวฟอเร็ก คอร์สเทรด Forex',
+    url: 'https://forex-bykrunet.vercel.app/',
+    siteName: 'CoachNest',
+    images: [
+      {
+        url: 'https://www.startrader.com/th/wp-content/uploads/sites/3/2023/04/What-is-Forex-20230426.jpg',
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: 'th-TH',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'สอนเทรด Forex โดยอาจารย์เนส',
+    description: 'สอนเทรดข่าวฟอเร็ก คอร์สเทรด Forex',
+    images: ['https://www.startrader.com/th/wp-content/uploads/sites/3/2023/04/What-is-Forex-20230426.jpg'],
+  },
+}
+
+
 const poppins = Anuphan({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
