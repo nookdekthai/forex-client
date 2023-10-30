@@ -15,6 +15,7 @@ import TopCategory from "./TopCategory";
 import PeopleReview from "./PeopleReview";
 import WhyLearnCourse from "./WhyLearnCourse";
 import Courses from "./Course";
+import TrustBy from "./TrustBy";
 
 
 function Home({ webInfo }: any) {
@@ -57,6 +58,7 @@ function Home({ webInfo }: any) {
             <PeopleReview />
             <Courses />
             <WhyLearnCourse />
+            <TrustBy/>
             <Footer />
         </div>
     );
