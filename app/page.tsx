@@ -10,6 +10,7 @@ export const metadata = {
     title: 'สอนเทรด Forex โดยอาจารย์เนส',
     description: 'สอนเทรดข่าวฟอเร็ก คอร์สเทรด Forex',
     url: 'https://forex-bykrunet.vercel.app',
+    site : 'https://forex-bykrunet.vercel.app',
     siteName: 'CoachNest',
     images: [
       {
