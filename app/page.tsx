@@ -11,7 +11,7 @@ export const metadata :Metadata= {
     title: 'สอนเทรด ข่าวเเละเทคนิค Forex โดยอาจารย์เนส',
     description: 'สอนเทรดข่าวฟอเร็ก คอร์สเทรด Forex',
     url: 'https://forextradebycoachnet',
-    site : 'https://forextradebycoachnet',
+    
     siteName: 'CoachNest',
     images: [
       {
