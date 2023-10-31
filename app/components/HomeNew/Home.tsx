@@ -38,9 +38,9 @@ function Home({ webInfo }: any) {
         <div>
 
             <Heading
-                title="คอร์สสอนการเทรด Forex โดยโค้ชเนส"
-                description="สอนเทคนิคการเทรดข่าว การเทรดโดยใช้เทคนิค"
-                keywords="เทรดข่าว forex , คอร์สสอนเทรด Forex , คอร์สเรียน forex"
+                title= "สอนเทรด Forex โดยโค้ชเนส"
+                description="สอนเทรดข่าวฟอเร็ก คอร์สเทรด Forex โดยโค้ชเนส"
+                keyword = "คอร์สสอนเทรด Forex , forextradebycoachnet , สอนเทรดข่าว forex , สอนเทรดข่าว forex โค้ชเนส "
             />
 
             <Header
