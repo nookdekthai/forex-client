@@ -5,12 +5,12 @@ import Home from "./components/HomeNew/Home";
 export const metadata = {
   title: 'สอนเทรด Forex โดยอาจารย์เนส',
   description: 'สอนเทรดข่าวฟอเร็ก คอร์สเทรด Forex ',
-  keyword : 'คอร์สสอนเทรด Forex , forex by krunet , สอนเทรดข่าว forex ',
+  keyword : 'คอร์สสอนเทรด Forex , forextradebycoachnet , สอนเทรดข่าว forex ',
   openGraph: {
     title: 'สอนเทรด Forex โดยอาจารย์เนส',
     description: 'สอนเทรดข่าวฟอเร็ก คอร์สเทรด Forex',
-    url: 'https://forex-bykrunet.vercel.app',
-    site : 'https://forex-bykrunet.vercel.app',
+    url: 'https://forextradebycoachnet',
+    site : 'https://forextradebycoachnet',
     siteName: 'CoachNest',
     images: [
       {
