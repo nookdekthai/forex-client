@@ -36,7 +36,13 @@ function Home({ webInfo }: any) {
 
     return (
         <div>
-          
+
+            <Heading
+                title="คอร์สสอนการเทรด Forex โดยโค้ชเนส"
+                description="สอนเทคนิคการเทรดข่าว การเทรดโดยใช้เทคนิค"
+                keywords="เทรดข่าว forex , คอร์สสอนเทรด Forex , คอร์สเรียน forex"
+            />
+
             <Header
                 open={open}
                 setOpen={setOpen}
@@ -54,7 +60,7 @@ function Home({ webInfo }: any) {
             <PeopleReview />
             <Courses />
             <WhyLearnCourse />
-            <TrustBy/>
+            <TrustBy />
             <Footer />
         </div>
     );

@@ -1,5 +1,5 @@
 
-import Home from "./components/HomeNew/Home";
+import  from "./components/HomeNew/Home";
 
 
 export const metadata = {
