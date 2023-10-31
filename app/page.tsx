@@ -1,9 +1,8 @@
 
-import { Metadata } from "next";
 import Home from "./components/HomeNew/Home";
 
 
-export const metadata :Metadata= {
+export const metadata = {
   title: 'สอนเทรด Forex โดยโค้ชเนส',
   description: 'สอนเทรดข่าวฟอเร็ก คอร์สเทรด Forex โดยโค้ชเนส',
   keyword : 'คอร์สสอนเทรด Forex , forextradebycoachnet , สอนเทรดข่าว forex , สอนเทรดข่าว forex โค้ชเนส ',
