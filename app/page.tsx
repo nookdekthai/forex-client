@@ -5,6 +5,7 @@ import Home from "./components/HomeNew/Home";
 export const metadata = {
   title: 'สอนเทรด Forex โดยอาจารย์เนส',
   description: 'สอนเทรดข่าวฟอเร็ก คอร์สเทรด Forex ',
+  keyword : 'คอร์สสอนเทรด Forex , forex by krunet , สอนเทรดข่าว forex ',
   openGraph: {
     title: 'สอนเทรด Forex โดยอาจารย์เนส',
     description: 'สอนเทรดข่าวฟอเร็ก คอร์สเทรด Forex',
