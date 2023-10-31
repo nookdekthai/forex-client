@@ -3,7 +3,9 @@ import  from "./components/HomeNew/Home";
 
 
 export const metadata = {
-  
+  title: 'สอนเทรด Forex โดยโค้ชเนส',
+  description: 'สอนเทรดข่าวฟอเร็ก คอร์สเทรด Forex โดยโค้ชเนส',
+  keywords : 'คอร์สสอนเทรด Forex , forextradebycoachnet , สอนเทรดข่าว forex , สอนเทรดข่าว forex โค้ชเนส ',
   openGraph: {
     title: 'สอนเทรด ข่าวเเละเทคนิค Forex โดยอาจารย์เนส',
     description: 'สอนเทรดข่าวฟอเร็ก คอร์สเทรด Forex',

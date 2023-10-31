@@ -37,11 +37,7 @@ function Home({ webInfo }: any) {
     return (
         <div>
 
-            <Heading
-                title= "สอนเทรด Forex โดยโค้ชเนส"
-                description="สอนเทรดข่าวฟอเร็ก คอร์สเทรด Forex โดยโค้ชเนส"
-                keywords = "คอร์สสอนเทรด Forex , forextradebycoachnet , สอนเทรดข่าว forex , สอนเทรดข่าว forex โค้ชเนส "
-            />
+         
 
             <Header
                 open={open}
