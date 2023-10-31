@@ -5,9 +5,9 @@ import Home from "./components/HomeNew/Home";
 export const metadata = {
   title: 'สอนเทรด Forex โดยอาจารย์เนส',
   description: 'สอนเทรดข่าวฟอเร็ก คอร์สเทรด Forex ',
-  keyword : 'คอร์สสอนเทรด Forex , forextradebycoachnet , สอนเทรดข่าว forex ',
+  keyword : 'คอร์สสอนเทรด Forex , forextradebycoachnet , สอนเทรดข่าว forex , สอนเทรดข่าว forex โค้ชเนส ',
   openGraph: {
-    title: 'สอนเทรด Forex โดยอาจารย์เนส',
+    title: 'สอนเทรด ข่าวเเละเทคนิค Forex โดยอาจารย์เนส',
     description: 'สอนเทรดข่าวฟอเร็ก คอร์สเทรด Forex',
     url: 'https://forextradebycoachnet',
     site : 'https://forextradebycoachnet',
