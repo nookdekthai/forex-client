@@ -37,8 +37,19 @@ export const ordersApi = apiSlice.injectEndpoints({
         credentials: "include" as const,
       }),
     }),
+    createOrderEbook: builder.mutation({
+      query: ({ ebookId, payment_info }) => ({
+        url: "create-order-ebook",
+        body: {
+          ebookId,
+          payment_info,
+        },
+        method: "POST",
+        credentials: "include" as const,
+      }),
+    }),
   }),
 });
 
-export const { useGetAllOrdersQuery,useGetStripePublishablekeyQuery, useCreatePaymentIntentMutation ,useCreateOrderMutation} =
+export const { useGetAllOrdersQuery,useGetStripePublishablekeyQuery, useCreatePaymentIntentMutation ,useCreateOrderMutation, useCreateOrderEbookMutation} =
   ordersApi;

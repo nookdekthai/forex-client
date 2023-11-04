@@ -10,6 +10,8 @@ import React, { FC, useEffect } from "react";
 import { useLoadUserQuery } from "@/redux/features/api/apiSlice";
 import Loader from "./components/Loader/Loader";
 import socketIO from "socket.io-client";
+import useLoading from "./hooks/useLoading";
+import SimpleBackdrop from "./components/Loading/SimpleBackdrop";
 const ENDPOINT = process.env.NEXT_PUBLIC_SOCKET_SERVER_URI || "";
 const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
 
@@ -53,13 +55,13 @@ export default function RootLayout({
 
 const Custom: FC<{ children: React.ReactNode }> = ({ children }) => {
   const { isLoading } = useLoadUserQuery({});
+  const [isLoadingBackDrop, setLoading] = useLoading()
   const { data: session } = useSession()
-  console.log("🚀 ~ file: layout.tsx:56 ~ session:", session)
 
   useEffect(() => {
     socketId.on("connection", () => {});
   }, []);
 
-  return <div>{(isLoading && session) ? <Loader /> : <div>{children} </div>}</div>;
+  return <div>{(isLoading && session) ? <Loader /> : <div> <SimpleBackdrop open={isLoadingBackDrop} setOpen={setLoading}/> {children} </div>}</div>;
   // return <div>{children} </div>
 };

@@ -5,6 +5,7 @@ import {
   AiOutlineDelete,
   AiOutlineMail,
   AiOutlineFileAdd,
+  AiOutlineVideoCameraAdd,
 } from "react-icons/ai";
 
 import { useTheme } from "next-themes";
@@ -20,6 +21,8 @@ import { styles } from "@/app/styles/style";
 import { toast } from "react-hot-toast";
 import { useGetAllCoursesQuery } from "@/redux/features/courses/coursesApi";
 import LoadingBackDrop from "../../Loader/LoadingBackDrop";
+import VideoCameraBackIcon from '@mui/icons-material/VideoCameraBack';
+import { useAddEbookUserMutation, useGetAllEbookQuery } from "@/redux/features/ebooks/ebookApi";
 
 type Props = {
   isTeam?: boolean;
@@ -32,6 +35,7 @@ const AllCourses: FC<Props> = ({ isTeam }) => {
   const [role, setRole] = useState("admin");
   const [open, setOpen] = useState(false);
   const [openModalAddCourse, setOpenModalAddCourse] = useState(false);
+  const [openModalAddEbook, setOpenModalAddEbook] = useState(false);
   const [userId, setUserId] = useState("");
   const [userInfo, setUserInfo] = useState({
     name: "",
@@ -42,20 +46,31 @@ const AllCourses: FC<Props> = ({ isTeam }) => {
   const [addCourse, { isLoading: isLoadingAddCourse, error: AddCourseError, isSuccess: AddCourseSuccess }] =
     useAddCourseToUserMutation();
 
+    const [addEbook, { isLoading: isLoadingAddEbook, error: AddEbookError, isSuccess: AddEbookSuccess }] =
+    useAddEbookUserMutation();
+
   const { isLoading, data, refetch } = useGetAllUsersQuery(
     {},
     { refetchOnMountOrArgChange: true }
   );
+
   const {
     isLoading: isLoadingCourse,
     data: courseList,
     refetch: refetchCourse,
   } = useGetAllCoursesQuery({}, { refetchOnMountOrArgChange: true });
 
+  const {
+    isLoading: isLoadingEbook,
+    data: ebookList,
+    refetch: refetchEbook,
+  } = useGetAllEbookQuery({}, { refetchOnMountOrArgChange: true });
+
   const [deleteUser, { isSuccess: deleteSuccess, error: deleteError }] =
     useDeleteUserMutation({});
 
   const [selectCourse, setSelectCourse] = useState("");
+  const [selectEbook, setSelectEbook] = useState("");
 
   useEffect(() => {
     if (updateError) {
@@ -78,6 +93,13 @@ const AllCourses: FC<Props> = ({ isTeam }) => {
       setSelectCourse('')
     }
 
+    if (AddEbookSuccess) {
+      refetch();
+      toast.success("Add Ebook successfully");
+      setOpenModalAddEbook(false)
+      setSelectEbook('')
+    }
+
     if (deleteSuccess) {
       refetch();
       toast.success("Delete user successfully!");
@@ -97,7 +119,13 @@ const AllCourses: FC<Props> = ({ isTeam }) => {
         toast.error(errorMessage.data.message);
       }
     }
-  }, [updateError, isSuccess, deleteSuccess, deleteError, AddCourseError, AddCourseSuccess]);
+    if (AddEbookError) {
+      if ("data" in AddEbookError) {
+        const errorMessage = AddEbookError as any;
+        toast.error(errorMessage.data.message);
+      }
+    }
+  }, [updateError, isSuccess, deleteSuccess, deleteError, AddCourseError, AddCourseSuccess, AddEbookError, AddEbookSuccess ]);
 
   const columns = [
     { field: "id", headerName: "ID", flex: 0.3 },
@@ -106,6 +134,34 @@ const AllCourses: FC<Props> = ({ isTeam }) => {
     { field: "role", headerName: "Role", flex: 0.5 },
     { field: "courses", headerName: "Purchased Courses", flex: 0.5 },
     { field: "created_at", headerName: "Joined At", flex: 0.5 },
+    {
+      field: "     ",
+      headerName: "Add Ebook",
+      flex: 0.25,
+      renderCell: (params: any) => {
+        return (
+          <>
+            <Button
+              onClick={() => {
+                setOpenModalAddEbook(true);
+                setUserId(params.row.id);
+
+                const userObj = data.users.find(
+                  (ele: any) => ele._id === params.row.id
+                );
+
+                setUserInfo(userObj);
+              }}
+            >
+              <AiOutlineFileAdd
+                className="dark:text-white text-black"
+                size={20}
+              />
+            </Button>
+          </>
+        );
+      },
+    },
     {
       field: "    ",
       headerName: "Add Course",
@@ -125,7 +181,7 @@ const AllCourses: FC<Props> = ({ isTeam }) => {
                 setUserInfo(userObj);
               }}
             >
-              <AiOutlineFileAdd
+              <AiOutlineVideoCameraAdd
                 className="dark:text-white text-black"
                 size={20}
               />
@@ -215,6 +271,11 @@ const AllCourses: FC<Props> = ({ isTeam }) => {
   const handleAddCourse = () => {
     const body = { user_id: userId, course_id: selectCourse };
     addCourse(body);
+  };
+
+  const handleAddEbook = () => {
+    const body = { user_id: userId, ebook_id: selectEbook };
+    addEbook(body);
   };
 
   return (
@@ -371,6 +432,19 @@ const AllCourses: FC<Props> = ({ isTeam }) => {
               })}
             />
           )}
+          {openModalAddEbook && (
+            <ModalAddEbook
+              {...({
+                openModalAddEbook,
+                setOpenModalAddEbook,
+                userInfo,
+                ebookList,
+                setSelectEbook,
+                selectEbook,
+                handleAddEbook
+              })}
+            />
+          )}
         </Box>
       )}
     </div>
@@ -428,6 +502,74 @@ const ModalAddCourse = ({ handleAddCourse, selectCourse, openModalAddCourse, set
             disabled={!!!selectCourse}
             className={`${styles.button}  w-full h-[30px] bg-[#2190ff] mt-4`}
             onClick={handleAddCourse}
+          >
+            Add
+          </button>
+        </div>
+      </Box>
+    </Modal>
+  )
+}
+
+
+const ModalAddEbook = ({  
+  openModalAddEbook,
+  setOpenModalAddEbook,
+  userInfo,
+  ebookList,
+  setSelectEbook,
+  selectEbook,
+  handleAddEbook }: any) => {
+  const [ebookOption, setEbookOption] = useState([])
+
+  useEffect(() => {
+    if(ebookList?.ebooks.length){
+      const newOption = ebookList?.ebooks.map((ele: any) => {
+      const isExits =  userInfo.ebooks.some((item:any) => item._id === ele._id)   
+        return {
+          ...ele,
+          isExits,
+        }
+
+      })
+      setEbookOption(newOption)
+    }
+  }, [])
+
+  return (
+    <Modal
+      open={openModalAddEbook}
+      onClose={() => setOpenModalAddEbook(false)}
+      aria-labelledby="modal-modal-title"
+      aria-describedby="modal-modal-description"
+    >
+      <Box className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[450px] bg-white dark:bg-slate-900 rounded-[8px] shadow p-4 outline-none">
+        <h1 className={`${styles.title}`}>
+          Add Ebook To "{userInfo?.name}"
+        </h1>
+        <div className="w-[100%] mt-4">
+          <select
+            name=""
+            id=""
+            className={`${styles.input}`}
+            value={selectEbook}
+            onChange={(e: any) => setSelectEbook(e.target.value)}
+          >
+            <option value="">Select Course</option>
+            {
+              ebookOption.map?.((item: any) => (
+                <option value={item._id} key={item._id} disabled={item.isExits}>
+                  {item.name}
+                </option>
+              ))}
+          </select>
+          <div />
+        </div>
+        <div className="flex w-full items-center justify-center mb-6 mt-6">
+          <button
+            disabled={!!!selectEbook}
+            className={`${styles.button}  w-full h-[30px] bg-[#2190ff] mt-4`}
+            onClick={handleAddEbook}
           >
             Add
           </button>
