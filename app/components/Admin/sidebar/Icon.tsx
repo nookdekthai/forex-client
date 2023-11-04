@@ -14,6 +14,8 @@ import WysiwygIcon from "@mui/icons-material/Wysiwyg";
 import ManageHistoryIcon from "@mui/icons-material/ManageHistory";
 import SettingsIcon from "@mui/icons-material/Settings";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import DifferenceIcon from '@mui/icons-material/Difference';
+import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 
 export {
     HomeOutlinedIcon,
@@ -32,4 +34,6 @@ export {
   ManageHistoryIcon,
   SettingsIcon,
   ExitToAppIcon,
+  InsertDriveFileIcon,
+  DifferenceIcon,
 }

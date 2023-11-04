@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['res.cloudinary.com', 'randomuser.me'],
+    domains: ['res.cloudinary.com', 'randomuser.me', 'cdn-local.mebmarket.com'],
   },
   experimental: {
     reactRoot: true,
@@ -11,6 +11,11 @@ const nextConfig = {
     // Warning: This allows production builds to successfully complete even if
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
+  },
+  webpack: (config) => {
+    // load worker files as a urls with `file-loader`
+    config.resolve.alias.canvas = false;
+    return config;
   },
   async rewrites() {
     return [
