@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  productionBrowserSourceMaps: true,
   images: {
     domains: ['res.cloudinary.com', 'randomuser.me', 'cdn-local.mebmarket.com'],
   },
