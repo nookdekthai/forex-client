@@ -66,6 +66,7 @@ const CheckOutForm = ({ setLoadingBackDrop, setOpenModalDownLoad, setOpen, data,
        message: `You have a new order from ${data.name}`,
        userId: user._id,
     });
+    redirect(`/course-access/${data._id}`);
    }
    if(error){
     if ("data" in error) {
