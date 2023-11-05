@@ -38,7 +38,7 @@ const CheckOutForm = ({ setLoadingBackDrop, setOpenModalDownLoad, setOpen, data,
       return;
     }
     setIsLoading(true);
-    setLoadingBackDrop(true)
+    setLoadingBackDrop?.(true)
     const { error, paymentIntent } = await stripe.confirmPayment({
       elements,
       redirect: "if_required",
@@ -46,11 +46,11 @@ const CheckOutForm = ({ setLoadingBackDrop, setOpenModalDownLoad, setOpen, data,
     if (error) {
       setMessage(error.message);
       setIsLoading(false);
-      setLoadingBackDrop(false)
+      setLoadingBackDrop?.(false)
     } else if (paymentIntent && paymentIntent.status === "succeeded") {
       setIsLoading(false);
       if(payForm === 'course'){
-        setLoadingBackDrop(false)
+        setLoadingBackDrop?.(false)
         createOrder({ courseId: data._id, payment_info: paymentIntent  });
       }else{
         createOrderEbook({ ebookId: data._id, payment_info: paymentIntent });
