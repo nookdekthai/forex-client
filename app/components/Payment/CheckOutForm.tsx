@@ -38,23 +38,33 @@ const CheckOutForm = ({ setLoadingBackDrop, setOpenModalDownLoad, setOpen, data,
       return;
     }
     setIsLoading(true);
+    console.log('xxx1');
     setLoadingBackDrop?.(true)
+    console.log('xxx2');
     const { error, paymentIntent } = await stripe.confirmPayment({
       elements,
       redirect: "if_required",
     });
+   console.log(paymentIntent);
+   
+    console.log('xxx3');
+    
     if (error) {
+      console.log('xxx4', error);
       setMessage(error.message);
       setIsLoading(false);
       setLoadingBackDrop?.(false)
     } else if (paymentIntent && paymentIntent.status === "succeeded") {
+      console.log('xxx5');
       setIsLoading(false);
       if(payForm === 'course'){
+        console.log('xxx6');
         setLoadingBackDrop?.(false)
         createOrder({ courseId: data._id, payment_info: paymentIntent  });
       }else{
         createOrderEbook({ ebookId: data._id, payment_info: paymentIntent });
       }
+      console.log('xxx7');
     }
   };
 
