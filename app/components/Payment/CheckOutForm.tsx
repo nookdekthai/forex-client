@@ -33,6 +33,7 @@ const CheckOutForm = ({ setLoadingBackDrop, setOpenModalDownLoad, setOpen, data,
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: any) => {
+    console.log('xxx0');
     e.preventDefault();
     if (!stripe || !elements) {
       return;
