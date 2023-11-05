@@ -30,7 +30,7 @@ const EbookCard: FC<Props> = ({ item, isProfile }) => {
             className="rounded w-full"
             alt=""
           />
-          <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-indigo-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-50" >
+          <div className="hidden md:block absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-indigo-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-50" >
             <span className="left-0 right-0 mx-auto w-[120px] absolute bottom-10 text-white border rounded-xl border-white p-2">Click to view</span>
           </div>
         </div>

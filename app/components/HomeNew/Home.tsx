@@ -16,6 +16,7 @@ import PeopleReview from "./PeopleReview";
 import WhyLearnCourse from "./WhyLearnCourse";
 import Courses from "./Course";
 import TrustBy from "./TrustBy";
+import Ebooks from "./Ebooks";
 
 
 function Home({ webInfo }: any) {
@@ -55,6 +56,7 @@ function Home({ webInfo }: any) {
             />
             <PeopleReview />
             <Courses />
+            <Ebooks/>
             <WhyLearnCourse />
             <TrustBy />
             <Footer />
