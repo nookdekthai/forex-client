@@ -20,27 +20,22 @@ const EbookCard: FC<Props> = ({ item, isProfile }) => {
   }
 
   return (
-    <div>
-      <div onClick={handleClick} className="cursor-pointer w-full max-w-[262px] min-h-[35vh] dark:bg-slate-500 dark:bg-opacity-20 backdrop-blur border dark:border-[#ffffff1d] border-[#00000015] dark:shadow-[bg-slate-700] shadow-sm dark:shadow-inner">
-        <div className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
+    <div className="w-full dark:bg-slate-500 dark:bg-opacity-20 backdrop-blur border dark:border-[#ffffff1d] border-[#00000015] dark:shadow-[bg-slate-700] rounded-lg p-3 shadow-sm dark:shadow-inner">
+        <div onClick={handleClick} className="w-full cursor-pointer dark:bg-slate-500 dark:bg-opacity-20 backdrop-blur border dark:border-[#ffffff1d] border-[#00000015] dark:shadow-[bg-slate-700] rounded-lg shadow-sm dark:shadow-inner">
           <Image
             src={item.thumbnail.url}
             width={500}
             height={300}
             objectFit="contain"
-            className=" w-full"
+            className="rounded w-full"
             alt=""
           />
           <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-indigo-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-50" >
-
             <span className="left-0 right-0 mx-auto w-[120px] absolute bottom-10 text-white border rounded-xl border-white p-2">Click to view</span>
-
           </div>
         </div>
-
-
         <br />
-        <h1 className="font-Poppins font-bold text-center text-[16px] text-black dark:text-[#fff]">
+        <h1 onClick={handleClick} className=" cursor-pointer font-Poppins font-bold text-center text-[16px] text-black dark:text-[#fff]">
           {item.name}
         </h1>
         <div className="w-full flex items-center justify-center pt-3 pb-2">
@@ -53,7 +48,6 @@ const EbookCard: FC<Props> = ({ item, isProfile }) => {
             </h5>
           </div>
         </div>
-      </div>
     </div>
   );
 };
