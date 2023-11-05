@@ -17,7 +17,7 @@ function Hero({ setOpen, banner }: any) {
                     การลงทุนที่ดีที่สุดคือ <p className='text-[#00FF84] underline'>การลงทุนในตัวเอง</p>
                     </h2>
                     <br />
-                    <p data-aos="fade-up" data-aos-delay="100" className="dark:text-[#edfff4] text-[#000000ac] font-Poppins font-[600] text-[18px] 1500px:!w-[55%] 1100px:!w-[78%]">
+                    <p data-aos="fade-up" data-aos-delay="100" className="dark:text-[#edfff4] text-[#000000ac] font-Poppins font-[600] text-[18px] 1500px:!w-[55%] 1100px:!w-[78%] p-[10px] md:p-[0px]">
                         {banner?.subTitle}
                     </p>
                     <br />
