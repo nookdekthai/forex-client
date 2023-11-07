@@ -121,7 +121,7 @@ const EbookDetails = ({
                     <td className="px-6 py-4">
                       <div className="flex items-center flex-col gap-3">
                         <BsFilePdf className="text-xl" />
-                        <p> {ebookInfo?.fileType}</p>
+                        <p> {ebookInfo?.fileType || 'PDF'}</p>
                       </div>
                     </td>
                   </tr>
@@ -131,13 +131,15 @@ const EbookDetails = ({
           </div>
           <div className="w-full 800px:w-[35%] relative">
             <div className="sticky top-[100px] left-0 z-50 w-full">
-              <Image
-                src={ebookInfo?.thumbnail?.url}
-                width={400}
-                height={350}
-                alt=""
+              {!!ebookInfo?.thumbnail?.url && (
+                <Image
+                  src={ebookInfo?.thumbnail?.url}
+                  width={400}
+                  height={350}
+                  alt=""
 
-              />
+                />
+              )}
               <div className="flex items-center">
                 <h1 className="pt-5 text-[25px] text-black dark:text-white">
                   {ebookInfo?.price === 0 ? "Free" : ebookInfo?.price + "฿"}
@@ -150,25 +152,25 @@ const EbookDetails = ({
                   {discountPercentengePrice}% Off
                 </h4>
               </div>
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-1 ">
                 {isPurchased ? (
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 800px:w-[35%]">
                     <button
-                    onClick={handleClickView}
-                    className={`${styles.button} !w-[140px] my-3 font-Poppins cursor-pointer bg-[#47d097] hover:bg-[#37a074]`}
-                  >
-                    <AiFillEye style={{ fontSize: 20 }} />&nbsp;
-                    View
-                  </button>
-                    <button
-                    onClick={saveFile}
-                    className={`${styles.button} !w-[190px] my-3 font-Poppins cursor-pointer bg-[#47d097] hover:bg-[#37a074]`}
-                  >
-                    <HiOutlineDownload style={{ fontSize: 20 }} />&nbsp;
-                    Download Now
-                  </button>
+                      onClick={handleClickView}
+                      className={`${styles.button} w-full my-3 font-Poppins cursor-pointer bg-[#47d097] hover:bg-[#37a074]`}
+                    >
+                      <AiFillEye style={{ fontSize: 20 }} />&nbsp;
+                      View
+                    </button>
+                    {/* <button
+                      onClick={saveFile}
+                      className={`${styles.button} !w-[190px] my-3 font-Poppins cursor-pointer bg-[#47d097] hover:bg-[#37a074]`}
+                    >
+                      <HiOutlineDownload style={{ fontSize: 20 }} />&nbsp;
+                      Download Now
+                    </button> */}
                   </div>
-                
+
                 ) : (
                   <div
                     className={`${styles.button} !w-[180px] my-3 font-Poppins cursor-pointer !bg-[crimson]`}
@@ -231,7 +233,7 @@ const EbookDetails = ({
           </Modal>
         )}
       </>
-      <SimpleBackdrop open={isLoadingBackDrop} setOpen={setLoadingBackDrop}/>
+      <SimpleBackdrop open={isLoadingBackDrop} setOpen={setLoadingBackDrop} />
     </div>
   );
 };
