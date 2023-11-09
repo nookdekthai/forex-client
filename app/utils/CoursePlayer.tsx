@@ -14,7 +14,7 @@ const CoursePlayer: FC<Props> = ({ videoUrl }) => {
 
   useEffect(() => {
     axios
-      .post("https://forextrade-6803a3f3a4b8.herokuapp.com/api/v1/getVdoCipherOTP", {
+      .post("https://forex-api.teeraweb.shop/api/v1/getVdoCipherOTP", {
         videoId: videoUrl,
       })
       .then((res) => {
