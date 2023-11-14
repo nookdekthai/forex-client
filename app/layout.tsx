@@ -11,6 +11,7 @@ import { useLoadUserQuery } from "@/redux/features/api/apiSlice";
 import Loader from "./components/Loader/Loader";
 import socketIO from "socket.io-client";
 import SimpleBackdrop from "./components/Loading/SimpleBackdrop";
+// import '@mdxeditor/editor/style.css';
 const ENDPOINT = process.env.NEXT_PUBLIC_SOCKET_SERVER_URI || "";
 const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
 

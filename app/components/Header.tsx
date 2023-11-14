@@ -45,9 +45,9 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
             avatar: data.user?.image,
           });
           
-          setTimeout(()=> {
-            refetch();
-          },2000)
+          refetch();
+          // setTimeout(()=> {
+          // },200)
         }
       }
       if (data === null) {

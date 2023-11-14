@@ -23,7 +23,7 @@ function Hero({ setOpen, banner }: any) {
                     <br />
                     <br />
                     <div className="flex gap-2 1500px:!w-[55%] 1100px:!w-[78%] flex-wrap">
-                        <div onClick={() => setOpen(true)} data-aos="fade-up" data-aos-delay="500" className="flex items-center justify-center h-[40px] w-[150px] md:h-[60px] md:w-[200px] font-size-[12px]  md:font-size-[16px] text-[16px] font-medium leading-[56px] fill-[#FFFFFF] text-[#FFFFFF] bg-[#6440FB] hover:bg-[#5632ED] hover:border-[#5632ED] cursor-pointer border-solid border-[2px_2px_2px_2px] border-[#6440FB] rounded-lg px-[20px] md:px-[50px] py-0">
+                        <div onClick={() => setOpen(true)} data-aos="fade-up" data-aos-delay="500" className="flex items-center justify-center h-[40px] w-[150px] md:h-[60px] md:w-[200px] font-size-[12px]  md:font-size-[16px] text-[16px] font-medium leading-[56px] fill-[#FFFFFF] text-[#FFFFFF] bg-[#6440FB] hover:bg-[var(--secondary-color-hover)] hover:border-[#5632ED] cursor-pointer border-solid border-[2px_2px_2px_2px] border-[#6440FB] rounded-lg px-[20px] md:px-[50px] py-0">
                            <span>Join Us </span> 
                         </div>
                         <div onClick={() => {router.push('/courses')}} data-aos="fade-up" data-aos-delay="600" className="flex items-center justify-center  h-[40px] w-[150px]  ml-4 md:h-[60px] md:w-[200px] font-size-[12px]  md:font-size-[16px] text-[16px] font-medium leading-[56px] fill-[#00FF84] text-[#00FF84]  border-solid border-2 border-[#00FF84] hover:text-[#140342] cursor-pointer hover:bg-[#00FF84] hover:border-[#00FF84]  rounded-lg text-center px-[20px] md:px-[40px]">

@@ -20,7 +20,6 @@ import Ebooks from "./Ebooks";
 
 
 function Home({ webInfo }: any) {
-    console.log("🚀 ~ file: Home.tsx:24 ~ Home ~ layout:", webInfo)
     const [open, setOpen] = useState(false);
     const [activeItem, setActiveItem] = useState(0);
     const [route, setRoute] = useState("Login");

@@ -12,9 +12,11 @@ const nextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
-  webpack: (config) => {
+  reactStrictMode: true,
+  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     // load worker files as a urls with `file-loader`
     config.resolve.alias.canvas = false;
+    config.experiments = { ...config.experiments, topLevelAwait: true };
     return config;
   },
   async rewrites() {

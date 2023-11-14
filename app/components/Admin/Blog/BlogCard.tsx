@@ -10,9 +10,9 @@ type Props = {
   isProfile?: boolean;
 };
 
-const EbookCard: FC<Props> = ({ item, isProfile }) => {
+const BlogCard: FC<Props> = ({ item, isProfile }) => {
   const router = useRouter()
-  const linkUrl = !isProfile ? `/ebook/${item._id}` : `course-access/${item._id}`
+  const linkUrl = `/blog/${item.slug}` 
 
   const handleClick = (e: any) => {
     e.preventDefault()
@@ -38,20 +38,20 @@ const EbookCard: FC<Props> = ({ item, isProfile }) => {
       </div>
       <br />
       <h1 onClick={handleClick} className=" cursor-pointer font-Poppins font-bold text-center text-[16px] text-black dark:text-[#fff]">
-        {item.name}
+        {item.title}
       </h1>
       <div className="w-full flex items-center justify-center pt-3 pb-2">
-        <div className="flex">
+        {/* <div className="flex">
           <h3 className="text-black font-semibold dark:text-[#fff]">
             {item.price === 0 ? "Free" : item.price?.toLocaleString() + "฿"}
           </h3>
           <h5 className="pl-3 text-[14px] mt-[-5px] line-through opacity-80 text-black dark:text-[#fff]">
             {item.estimatedPrice?.toLocaleString()}฿
           </h5>
-        </div>
+        </div> */}
       </div>
     </div>
   );
 };
 
-export default EbookCard;
+export default BlogCard;
